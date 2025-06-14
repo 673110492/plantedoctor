@@ -146,7 +146,7 @@ Route::post('/predict', function (Request $request) {
     try {
         $response = Http::attach(
             'file', Storage::disk('public')->get($path), $image->getClientOriginalName()
-        )->post('http://127.0.0.1:8030/predict');
+        )->post('https://5196-129-0-80-188.ngrok-free.app/predict');
 
         if ($response->successful()) {
             $result = $response->json();
